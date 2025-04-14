@@ -3,9 +3,14 @@ import react.*
 import react.dom.*
 import react.dom.html.ReactHTML.p
 
-val VideoList = FC<Props> {
-    for (video in unwatchedVideos) {
+external interface VideoListProps : Props {
+    var videos: List<Video>
+}
+
+val VideoList = FC<VideoListProps> { props ->
+    for (video in props.videos) {
         p {
+            key = video.id.toString()
             +"${video.speaker}: ${video.title}"
         }
     }

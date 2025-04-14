@@ -23,13 +23,17 @@ val App = FC<Props> {
             +"Videos to watch"
         }
 
-        VideoList()
+        VideoList {
+            videos = unwatchedVideos
+        }
 
         h3 {
             +"Videos watched"
         }
 
-        VideoList()
+        VideoList {
+            videos = watchedVideos
+        }
     }
     div {
         css {
