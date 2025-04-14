@@ -45,17 +45,10 @@ val App = FC<Props> {
             }
         }
     }
-    div {
-        css {
-            position = Position.absolute
-            top = 10.px
-            right = 10.px
-        }
-        h3 {
-            +"John Doe: Building and breaking things"
-        }
-        img {
-            src = "https://dummyimage.com/600x400/000000/ffffff&text=Video+Player+Placeholder"
+
+    currentVideo?.let { curr ->
+        VideoPlayer {
+            video = curr
         }
     }
 }
