@@ -57,7 +57,7 @@ fun main() {
                 +"John Doe: Building and breaking things"
             }
             img {
-                src = "https://via.placeholder.com/640x360.png?text=Video+Player+Placeholder"
+                src = "https://dummyimage.com/600x400/000000/ffffff&text=Video+Player+Placeholder"
             }
         }
     })
