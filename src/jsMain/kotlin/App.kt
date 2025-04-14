@@ -22,19 +22,14 @@ val App = FC<Props> {
         h3 {
             +"Videos to watch"
         }
-        for (video in unwatchedVideos) {
-            p {
-                +"${video.speaker}: ${video.title}"
-            }
-        }
+
+        VideoList()
+
         h3 {
             +"Videos watched"
         }
-        for (video in watchedVideos) {
-            p {
-                +"${video.speaker}: ${video.title}"
-            }
-        }
+
+        VideoList()
     }
     div {
         css {
