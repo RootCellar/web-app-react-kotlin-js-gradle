@@ -11,6 +11,9 @@ val VideoList = FC<VideoListProps> { props ->
     for (video in props.videos) {
         p {
             key = video.id.toString()
+            onClick = {
+                window.alert("Clicked $video!")
+            }
             +"${video.speaker}: ${video.title}"
         }
     }
