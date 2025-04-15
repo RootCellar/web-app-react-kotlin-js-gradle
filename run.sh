@@ -1,3 +1,3 @@
 #!/bin/bash
 
- ./gradlew jsBrowserDevelopmentRun
+ JAVA_OPTS="-Xmx1G" ./gradlew jsBrowserDevelopmentRun
