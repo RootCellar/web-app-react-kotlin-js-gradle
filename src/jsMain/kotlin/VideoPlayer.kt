@@ -8,6 +8,8 @@ import react.dom.html.ReactHTML.img
 
 external interface VideoPlayerProps : Props {
     var video: Video
+    var onWatchedButtonPressed: (Video) -> Unit
+    var unwatchedVideo: Boolean
 }
 
 val VideoPlayer = FC<VideoPlayerProps> { props ->
@@ -19,6 +21,20 @@ val VideoPlayer = FC<VideoPlayerProps> { props ->
         }
         h3 {
             +"${props.video.speaker}: ${props.video.title}"
+        }
+        button {
+            css {
+                display = Display.block
+                backgroundColor = if (props.unwatchedVideo) NamedColor.lightgreen else NamedColor.red
+            }
+            onClick = {
+                props.onWatchedButtonPressed(props.video)
+            }
+            if (props.unwatchedVideo) {
+                +"Mark as watched"
+            } else {
+                +"Mark as unwatched"
+            }
         }
         img {
             src = "https://dummyimage.com/600x400/000000/ffffff&text=Video+Player+Placeholder"
